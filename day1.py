@@ -1,5 +1,7 @@
 import numpy
+import time
 
+start = time.perf_counter()
 data = numpy.loadtxt("inputs/day1.txt")
 
 # day1 func 1
@@ -24,3 +26,4 @@ def measure_window(data):
 # main
 print(find_increase(data))
 print(measure_window(data))
+print((time.perf_counter() - start)*1000, "ms")

@@ -1,4 +1,6 @@
+import time
 
+start = time.perf_counter()
 with open('inputs/day3.txt') as f:
    temp = f.readlines()
 
@@ -277,3 +279,4 @@ def day1func2(data):
     
 print(day1func1(data))
 print(day1func2(data))
+print((time.perf_counter() - start)*1000, "ms")

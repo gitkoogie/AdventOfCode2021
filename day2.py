@@ -1,5 +1,7 @@
 import numpy
+import time
 
+start = time.perf_counter()
 
 with open('inputs/day2.txt') as f:
     lines = f.readlines()
@@ -17,7 +19,6 @@ for i in range(len(lines)):
 def part1(temp):
 	horizontal = 0
 	depth = 0
-
 	for i in range(0, len(temp), 2):
 		if temp[i] == 'forward':
 			horizontal += int(temp[i + 1])
@@ -31,7 +32,6 @@ def part2(temp):
 	aim = 0
 	horizontal = 0
 	depth = 0
-
 	for i in range(0, len(temp), 2):
 		if temp[i] == 'forward':
 			horizontal += int(temp[i + 1])
@@ -40,7 +40,6 @@ def part2(temp):
 			aim += int(temp[i + 1])
 		elif temp[i] == 'up':
 			aim -= int(temp[i + 1])
-	
 	return depth * horizontal
 
 
@@ -49,3 +48,4 @@ def part2(temp):
 print(part1(temp))
 # part 2
 print(part2(temp))
+print((time.perf_counter() - start)*1000, "ms")

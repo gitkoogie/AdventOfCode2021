@@ -62,6 +62,6 @@ print(victor(init, 256))
 victor_time = (time.perf_counter() - start)*1000
 print(victor_time, "ms")
 
-print("My code is ", my_time/victor_time, " slower than victors")
+print("My code takes ", my_time/victor_time, "X longer than victors")
 
 

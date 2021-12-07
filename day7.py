@@ -3,7 +3,7 @@ import numpy as np
 
 start = time.perf_counter()
 def get_input():
-   with open('inputs/day7.txt') as f:
+   with open('inputs/test7.txt') as f:
       temp = f.readlines()
    
    init = temp[0].split(",")
@@ -25,6 +25,7 @@ def day7part2(init):
    fuel = 0
    # compute fuel for floor vs ceil average
    for avg in averages:
+      fuel = 0
       for val in init:
          diff = int(abs(avg - val))
          fuel += diff/2*(diff + 1)

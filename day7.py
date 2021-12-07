@@ -27,10 +27,7 @@ def day7part2(init):
    for avg in averages:
       for val in init:
          diff = int(abs(avg - val))
-         s = 0
-         for i in range(diff + 1):
-            s += i
-         fuel += s
+         fuel += diff/2*(diff + 1)
       res.append(fuel)
    return min(res)
 
